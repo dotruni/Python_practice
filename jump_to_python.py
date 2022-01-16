@@ -40,7 +40,15 @@ a="%0.4f"%3.42433242324
 print(a)
 
 a= "hobby"
-print(a.count('b'))
+print(a.count('b')) #b가 몇번 나왔냐
+print(a.find('b')) #가장 처음 나온 b의 위치는 ? #없으면 -1 나옴
+
+a=[1,3,4,6,7,0,7,8]
+#a.append
+#a.sort
+#a.insert(0,4)
+#a.remove(1)
+#a.extend
 
               
 
