@@ -1,0 +1,419 @@
+Type "help", "copyright", "credits" or "license" for more information.
+>>> "i eat %d apples." %3
+'i eat 3 apples.'
+>>> "i eat %s apples." %'three'
+'i eat three apples.'
+>>> number=3
+>>> 'i eat %d apples.'%number
+'i eat 3 apples.'
+>>> number=10
+>>> day='three'
+>>> "i ate %d apples. so i was sick for %s days." %(number,day)
+'i ate 10 apples. so i was sick for three days.'
+>>> "i have %s apples" %3
+'i have 3 apples'
+>>> 'rate is %s' %3.2323
+'rate is 3.2323'
+>>> # %s 는 만ㄴ능이다!!
+>>> %를 나타내려면 %d%%
+  File "<stdin>", line 1
+    %를 나타내려면 %d%%
+    ^
+SyntaxError: invalid syntax
+>>> # %d%% 해야 함.
+>>> 'My heart to you is %d%% for real.' %100
+'My heart to you is 100% for real.'
+>>> "%10s" % "hi
+  File "<stdin>", line 1
+    "%10s" % "hi
+                ^
+SyntaxError: EOL while scanning string literal
+>>> "%10s" % "hi"
+'        hi'
+>>> "%23s" % "sorry"
+'                  sorry'
+>>> "%-15ssomin" % "hi"
+'hi             somin'
+>>> "%0.4f" %3.4567765
+'3.4568'
+>>> "%10.4f" % "3.466554
+  File "<stdin>", line 1
+    "%10.4f" % "3.466554
+                        ^
+SyntaxError: EOL while scanning string literal
+>>> "%10.4f" % "3.466554"
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: must be real number, not str
+>>> "%10.4f" % 3.466554
+'    3.4666'
+>>> "i eat {0} apples".format(3)
+'i eat 3 apples'
+>>> "i eat {0} apples".format(three)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'three' is not defined
+>>> "i eat {0} apples".format('three')
+'i eat three apples'
+>>> number=7
+>>> day="three"
+>>> "I ate {0} apples. so i was sick for {1} days.".format(number,day)
+'I ate 7 apples. so i was sick for three days.'
+>>> "i ate {number}salmon. so i was sick for {days} days.".format(number=2,days=4)
+'i ate 2salmon. so i was sick for 4 days.'
+>>> "{0:<10}".format("hi")
+'hi        '
+>>> "{0:^10}".format("hi")
+'    hi    '
+>>> "{0:=^10}".format("hi hyeram")
+'hi hyeram='
+>>> "{0:=^10}".format("hyeram")
+'==hyeram=='
+>>> y=3.423223232
+>>> "{0:0.4f}".format(y)
+'3.4232'
+>>> "{0:10.4f}".format(y)
+'    3.4232'
+>>> "{{and}}".format()
+'{and}'
+>>> name='홍길동'
+>>> age=30
+>>> f'나의 이름은 {name}입니다. 나이는 {age}입니다.'
+'나의 이름은 홍길동입니다. 나이는 30입니다.'
+>>> name='이혜람'
+>>> age=26
+>>> f'나의 이름은 {name}입니다. 나이는 {age}입니다.'
+'나의 이름은 이혜람입니다. 나이는 26입니다.'
+>>> name='임소민'
+  File "<stdin>", line 1
+    > name='임소민'
+    ^
+SyntaxError: invalid syntax
+>>> name='임소민'민'
+  File "<stdin>", line 1
+    name='임소민'민'
+              ^
+SyntaxError: invalid syntax
+>>> name='임소민'
+>>> age=26
+>>> f'내 이름은 {name}인데, 나이는 {age}야.
+  File "<stdin>", line 1
+    f'내 이름은 {name}인데, 나이는 {age}야.
+                                 ^
+SyntaxError: EOL while scanning string literal
+>>> f'내 이름은 {name}인데, 나이는 {age}야.'
+'내 이름은 임소민인데, 나이는 26야.'
+>>> f'내 이름은 {name}인데, 나이는 {age+1}야.'
+'내 이름은 임소민인데, 나이는 27야.'
+>>> f'내 이름은 {name}인데, 내년이면 나이는 {age+1}야.'
+'내 이름은 임소민인데, 내년이면 나이는 27야.'
+>>> f'{"hi":<10}'
+'hi        '
+>>> f'{"RAM":>10}'
+'       RAM'
+>>> f'{"RAM":^10}'
+'   RAM    '
+>>> f'{"RAM":=^10}'
+'===RAM===='
+>>> f'{"RAM":!<10}'
+'RAM!!!!!!!'
+>>> y=3.523244
+>>> f'{y:0.4f}'
+'3.5232'
+>>> #문자열 관련함수
+>>> #count
+>>> a="hobby"
+>>> a.count(b)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'b' is not defined
+>>> a.count('b')
+2
+>>> a.find(b)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'b' is not defined
+>>> a.find('b')
+2
+>>> ",".join('abcd')
+'a,b,c,d'
+>>> a='hyeram'
+>>> a.upper()
+'HYERAM'
+>>> a.lower()
+'hyeram'
+>>> a=" hi "
+>>> a.lstrip()
+'hi '
+>>> #strip은 remove ㅣlike strip show!
+>>> a.rstrip()
+' hi'
+>>> a.strip()
+'hi'
+>>> a="  hyeram   "
+>>> a.strip()
+'hyeram'
+>>> a="Life is too short"
+>>> a.replace(Life,Youth)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'Life' is not defined
+>>> a.replace('Life','Youth')
+'Youth is too short'
+>>> a.split()
+['Life', 'is', 'too', 'short']
+>>> b="a:b:c:d"
+>>> b.split(':')
+['a', 'b', 'c', 'd']
+>>> #split은 아무것도 넣지 않으면 공백을 기준으로 나눔
+>>> a=[1,2,3]
+>>> a[0]+a[2]
+4
+>>> a[-1]
+3
+>>> a=[1,2,3,['a','b','c']]
+>>> a[-1][0]
+'a'
+>>> a=[1,2,['a','b',['Life','is']]]
+>>> a[2][2][0]
+'Life'
+>>> a=[1,2,3]
+>>> b=[4,5,6]
+>>> a+b
+[1, 2, 3, 4, 5, 6]
+>>> a=[1,2,3]
+>>> a*3
+[1, 2, 3, 1, 2, 3, 1, 2, 3]
+>>> a=[1,2,3]
+>>> a[2]=4
+>>> a
+[1, 2, 4]
+>>> del a[1]
+>>> a
+[1, 4]
+>>> a=[1,2,3,4,5,6]
+>>> del a[2:]
+>>> a
+[1, 2]
+>>> #리스트 관련 함수 append(첨부하다)
+>>> a=[1,2,3]
+>>> a.append(4)
+>>> a
+[1, 2, 3, 4]
+>>> a.append([5,6])
+>>> a=[1,4,3,2]
+>>> a.sort()
+>>> a
+[1, 2, 3, 4]
+>>> a=['a','c','b']
+>>> a.sort()
+>>> a
+['a', 'b', 'c']
+>>> a=['a','c','b']
+>>> a.reverse()
+>>> a
+['b', 'c', 'a']
+>>> a=[1,2,3]
+>>> a.index(3)
+2
+>>> a.index(1)
+0
+>>> a.index(0,4)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: 0 is not in list
+>>> a.insert(0,4)
+>>> a
+[4, 1, 2, 3]
+>>> a.insert(3,5)
+>>> a
+[4, 1, 2, 5, 3]
+>>> a=[1,2,3,4,6,2,1,2]
+>>> a.remove(2)
+>>> a
+[1, 3, 4, 6, 2, 1, 2]
+>>> a.remove(2)
+>>> a
+[1, 3, 4, 6, 1, 2]
+>>> a=[1,2,3,4]
+>>> a.pop()
+4
+>>> #pop()은 맨마지막 요소를 돌려주고 그 요소 삭제
+>>> a.pop(2)
+3
+>>> a
+[1, 2]
+>>> a=[1,2,3]
+>>> a.extend([4,5])
+>>> a
+[1, 2, 3, 4, 5]
+>>> #실제로 값이 변경되는 형태의 변수가 훨씬 많아서 튜플<<리스트
+>>> t=(1,2,3)
+>>> t+(4,)
+(1, 2, 3, 4)
+>>> a={1:'a'}
+>>> a[2]='b'
+>>> a
+{1: 'a', 2: 'b'}
+>>> a['name']='ram'
+>>> a
+{1: 'a', 2: 'b', 'name': 'ram'}
+>>> a[3]=[1,2,3]
+>>> a
+{1: 'a', 2: 'b', 'name': 'ram', 3: [1, 2, 3]}
+>>> del a[1]
+>>> a
+{2: 'b', 'name': 'ram', 3: [1, 2, 3]}
+>>> grade={'pey':10,'juilliet':90}
+>>> grade{'pey}
+  File "<stdin>", line 1
+    grade{'pey}
+         ^
+SyntaxError: invalid syntax
+>>> grade{'pey'}
+  File "<stdin>", line 1
+    grade{'pey'}
+         ^
+SyntaxError: invalid syntax
+>>> grade['pey']
+10
+>>> grade['julliet']
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+KeyError: 'julliet'
+>>> grade['juilliet']
+90
+>>> a={'name':'hyeram','phone':'8749','birth':'971210'}
+>>> a.keys()
+dict_keys(['name', 'phone', 'birth'])
+>>> for k i n a.keys():
+  File "<stdin>", line 1
+    for k i n a.keys():
+          ^
+SyntaxError: invalid syntax
+>>> for k in a.keys()::
+  File "<stdin>", line 1
+    for k in a.keys()::
+                      ^
+SyntaxError: invalid syntax
+>>> for k in a.keys():
+...    print(k)
+...
+name
+phone
+birth
+>>> list(a.keys())
+['name', 'phone', 'birth']
+>>> a.items()
+dict_items([('name', 'hyeram'), ('phone', '8749'), ('birth', '971210')])
+>>> a.clear()
+>>> a
+{}
+>>> a.get('name')
+>>> 'name' in a
+False
+>>> a={'name':'hyeram','phone':'8749','birth':'971210'}
+>>> 'name' in a
+True
+>>> 'email' in a
+False
+>>> dic={'name':'홍길동','birth':'1128','age':30}
+>>> s1=set([1,2,3])
+>>> s2=set("Hellp")
+>>> se
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'se' is not defined
+>>> s2
+{'p', 'e', 'H', 'l'}
+>>> s1=set([1,2,3,4,5,6])
+>>> s2=set([4,5,6,7,8,9])
+>>> s1&s2
+{4, 5, 6}
+>>> s1.intersection(s2)
+{4, 5, 6}
+>>> s1|s2
+{1, 2, 3, 4, 5, 6, 7, 8, 9}
+>>> s1.union(s2)
+{1, 2, 3, 4, 5, 6, 7, 8, 9}
+>>> s1-s2
+{1, 2, 3}
+>>> s2-s1
+{8, 9, 7}
+>>> s1.difference(s2)
+{1, 2, 3}
+>>> s1.add(4)
+>>> s1
+{1, 2, 3, 4, 5, 6}
+>>> s1.add(7)
+>>> s1
+{1, 2, 3, 4, 5, 6, 7}
+>>> sq.upadate(['a','b','c'])
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'sq' is not defined
+>>> s1.upadate(['a','b','c'])
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'set' object has no attribute 'upadate'
+>>> s1.update(['a','b','c'])
+>>> s1
+{1, 2, 3, 4, 5, 6, 7, 'c', 'b', 'a'}
+>>> s1.remove(2)
+>>> s1
+{1, 3, 4, 5, 6, 7, 'c', 'b', 'a'}
+>>> a=True
+>>> b=False
+>>> type(a)
+<class 'bool'>
+>>> type(b)
+<class 'bool'>
+>>> 1==1
+True
+>>> 1>@
+  File "<stdin>", line 1
+    1>@
+      ^
+SyntaxError: invalid syntax
+>>> 1>2
+False
+>>> ""
+''
+>>> if[]:
+...     print('참')
+... else:
+...     print('거짓')
+...
+거짓
+>>> bool([])
+False
+>>> a=[1,2,3]
+>>> q=b
+>>> a=b[:] #주소는 다르게
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'bool' object is not subscriptable
+>>> a=b[:]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'bool' object is not subscriptable
+>>> b=a[:]
+>>> b
+[1, 2, 3]
+>>> from copy import copy
+>>> b=copy(a)
+>>> b
+[1, 2, 3]
+>>> a[1]=4
+>>> a
+[1, 4, 3]
+>>> b
+[1, 2, 3]
+>>> b is a
+False
+>>> a,b=(python,life)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'python' is not defined
+>>> a,b=('python','life')
+>>> a=b='python'
